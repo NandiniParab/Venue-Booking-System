@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Updated color scheme based on your palette */
+
+@layer base {
+  :root {
+    --background: 45 87% 94%; /* #FEF9E1 */
+    --foreground: 0 0% 15%; /* Dark text */
+
+    --card: 45 87% 94%; /* #FEF9E1 */
+    --card-foreground: 0 0% 15%;
+
+    --popover: 45 87% 94%; /* #FEF9E1 */
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 0 67% 35%; /* #A31D1D */
+    --primary-foreground: 45 87% 94%;
+
+    --secondary: 41 52% 75%; /* #E5D0AC */
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 41 52% 75%; /* #E5D0AC */
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 51 70% 41%; /* #A89C29 */
+    --accent-foreground: 45 87% 94%;
+
+    --destructive: 351 95% 12%; /* #3B060A */
+    --destructive-foreground: 45 87% 94%;
+
+    --border: 41 52% 85%;
+    --input: 41 52% 85%;
+    --ring: 0 67% 35%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 45 87% 94%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 67% 35%;
+    --sidebar-primary-foreground: 45 87% 94%;
+    --sidebar-accent: 41 52% 75%;
+    --sidebar-accent-foreground: 0 0% 15%;
+    --sidebar-border: 41 52% 85%;
+    --sidebar-ring: 0 67% 35%;
+  }
+
+  .dark {
+    --background: 351 95% 12%; /* #3B060A */
+    --foreground: 45 87% 94%;
+
+    --card: 351 95% 12%;
+    --card-foreground: 45 87% 94%;
+
+    --popover: 351 95% 12%;
+    --popover-foreground: 45 87% 94%;
+
+    --primary: 0 67% 35%; /* #A31D1D */
+    --primary-foreground: 45 87% 94%;
+
+    --secondary: 0 42% 29%; /* #6D2323 */
+    --secondary-foreground: 45 87% 94%;
+
+    --muted: 0 42% 29%;
+    --muted-foreground: 41 52% 75%;
+
+    --accent: 51 70% 41%; /* #A89C29 */
+    --accent-foreground: 45 87% 94%;
+
+    --destructive: 0 67% 55%;
+    --destructive-foreground: 45 87% 94%;
+
+    --border: 0 42% 29%;
+    --input: 0 42% 29%;
+    --ring: 0 67% 35%;
+
+    --sidebar-background: 351 95% 12%;
+    --sidebar-foreground: 45 87% 94%;
+    --sidebar-primary: 0 67% 35%;
+    --sidebar-primary-foreground: 45 87% 94%;
+    --sidebar-accent: 0 42% 29%;
+    --sidebar-accent-foreground: 45 87% 94%;
+    --sidebar-border: 0 42% 29%;
+    --sidebar-ring: 0 67% 35%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Modern glassmorphism utilities */
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/30 shadow-lg;
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--secondary)) 50%, hsl(var(--muted)) 100%);
+  }
+}
